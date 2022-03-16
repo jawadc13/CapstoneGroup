@@ -377,7 +377,7 @@ input.au-input.au-input-xl{
 
 .navbar-sidebar .navbar-list li a{
     display:block;
-    transform: rotate3d(2, 0, 1, 60deg);
+    
     color:#fff;
     font-size:25px;
     padding:10px 0
@@ -389,6 +389,7 @@ input.au-input.au-input-xl{
 
 .navbar-sidebar .navbar-list li a:hover{
     color: #fdbfbf;
+    font-size:30px;
     font-weight: 900;
 }
 
