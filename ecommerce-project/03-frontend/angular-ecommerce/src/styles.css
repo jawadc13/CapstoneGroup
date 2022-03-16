@@ -112,7 +112,7 @@ a,a:hover{
 }
 
 .page-container{
-    background:#f8bebe;
+    background:#fff;
  /*   background:#e5e5e5; */
     padding-left:200px
 }
@@ -310,6 +310,12 @@ input.au-input.au-input-xl{
     transform:translate(-50%,-50%)
 }
 
+.page-link-color{
+    color:rgb(255, 46, 161);
+
+
+}
+
 /* 
  * ----------------------------
  * Left Menu Bar
@@ -372,7 +378,7 @@ input.au-input.au-input-xl{
 .navbar-sidebar .navbar-list li a{
     display:block;
     transform: rotate3d(2, 0, 1, 60deg);
-    color:rgb(255, 46, 161);
+    color:#fff;
     font-size:25px;
     padding:10px 0
 }
@@ -382,7 +388,8 @@ input.au-input.au-input-xl{
 }
 
 .navbar-sidebar .navbar-list li a:hover{
-    color:#0da8e4
+    color: #fdbfbf;
+    font-weight: 900;
 }
 
 /* 
@@ -781,10 +788,10 @@ a.primary-btn:hover{
  */
 
 footer ul li a{
-    color:#fff
+    color:rgb(255, 46, 161)
 }
 footer{
-    background:#232324;
+    background:rgb(138, 17, 17);
     z-index:1;
     position:relative;
     text-align:center
