@@ -310,6 +310,12 @@ input.au-input.au-input-xl{
     transform:translate(-50%,-50%)
 }
 
+.page-link-color{
+    color:rgb(255, 46, 161);
+
+
+}
+
 /* 
  * ----------------------------
  * Left Menu Bar
@@ -781,10 +787,10 @@ a.primary-btn:hover{
  */
 
 footer ul li a{
-    color:#fff
+    color:rgb(255, 46, 161)
 }
 footer{
-    background:#232324;
+    background:rgb(138, 17, 17);
     z-index:1;
     position:relative;
     text-align:center
