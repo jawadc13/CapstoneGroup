@@ -1,9 +1,18 @@
-<div class="detail-section">
+<div class="detail-section" style="margin-top: 5em;">
     <div class="container-fluid">
+        <div class="row">
 
-        <img src="{{ product.imageUrl }}" class="detail-img">
+            <div class="col-lg-2">
+                </div>
 
-        <h3>{{ product.name }}</h3>
+            <div class="col-lg-4">
+                <img src="{{ product.imageUrl }}" class="detail-img-custom">
+
+            </div>
+            <div class="col-lg-4">
+
+
+        <h3 class="detail-title">{{ product.name }}</h3>
         <div class="price">{{ product.unitPrice | currency:'USD' }}</div>
         <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
 
@@ -11,8 +20,15 @@
         <h4>Description</h4>
         <p>{{ product.description }}</p>
 
-        <a routerLink="/products" class="page-link-color mt-5 ">Back to Product List</a>
-    </div>
+        <a routerLink="/products" class="page-link-color mt-5 detail-footer">Back to Product List</a>
+    
+
+            </div>
+
+        </div>
+
+       </div>
+    
 </div>
 
 
