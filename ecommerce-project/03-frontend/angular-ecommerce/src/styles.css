@@ -18,7 +18,7 @@ body{
     font-weight:400;
     font-size:16px;
     line-height:1.625;
-    color:#666;
+    color:rgb(102, 102, 102);
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale
 }
@@ -107,12 +107,13 @@ a,a:hover{
 
 .page-wrapper{
     overflow:hidden;
-    background:#e5e5e5;
+    background:#f8bebe;
     padding-bottom:8vh
 }
 
 .page-container{
-    background:#e5e5e5;
+    background:#f8bebe;
+ /*   background:#e5e5e5; */
     padding-left:200px
 }
 
@@ -135,7 +136,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
  */
 
 .header-desktop{
-    background:#0da8e4;
+    background:rgb(180, 61, 61);
     -webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     -moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
@@ -225,9 +226,9 @@ input.au-input.au-input-xl{
 
 .au-input{
     line-height:43px;
-    border:1px solid #e5e5e5;
+    border:1px solid #fc7777;
     font-size:14px;
-    color:#666;
+    color:rgb(255, 46, 161);
     padding:0 17px;
     -webkit-border-radius:3px;
     -moz-border-radius:3px;
@@ -246,26 +247,27 @@ input.au-input.au-input-xl{
     font-size:22px;
     float:left;
     margin-top:16px;
-    color:#fff;
+    color:rgb(255, 46, 161);
     margin-left:15px
 }
 
 .total{
-    background:#205b8d;
+    background:rgb(255, 46, 161);
     line-height:43px;
     color:#fff;
     border-radius:30px;
-    border:1px solid #0da8e4;
+    border:1px solid rgb(255, 46, 161);
     float:left;
     margin-top:7px;
     padding-left:17px
 }
 
+/*Total in far right capsule*/
 .total span{
     display:inline-block;
     background:#fff;
     padding:0 13px;
-    color:#000;
+    color:rgb(255, 46, 161);
     border-top-right-radius:20px;
     border-bottom-right-radius:20px;
     margin-left:11px
@@ -284,15 +286,15 @@ input.au-input.au-input-xl{
     right:0;
     min-width:95px;
     color:#fff;
-    border:1px solid #205b8d;
+    border:1px solid rgb(255, 46, 161);
     -webkit-border-radius:3px;
     -moz-border-radius:3px;
     border-radius:43px;
-    background:#205b8d
+    background:rgb(255, 46, 161)
 }
 
 .au-btn-submit:hover{
-    background:#05143f
+    background:hsl(327, 100%, 25%)
 }
 
 .au-btn-submit>i{
@@ -320,12 +322,12 @@ input.au-input.au-input-xl{
     left:0;
     top:0;
     bottom:0;
-    background:#fff;
+    background:rgb(180, 61, 61);
     overflow-y:auto
 }
 
 .menu-sidebar .logo{
-    background:#fff;
+    background:rgb(138, 17, 17);
     height:75px;
     padding:0 35px;
     display:-webkit-box;
@@ -341,7 +343,7 @@ input.au-input.au-input-xl{
     -webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     -moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
-    border-right:1px solid #e5e5e5;
+    border-right:1px solid #700000;
     position:relative;
     z-index:3
 }
@@ -369,9 +371,11 @@ input.au-input.au-input-xl{
 
 .navbar-sidebar .navbar-list li a{
     display:block;
-    color:#555;
-    font-size:16px;
-    padding:5px 0
+    transform: rotate3d(2, 0, 1, 60deg);
+    color:rgb(255, 46, 161);
+    font-size:25px;
+    font-weight: bold;
+    padding:10px 0
 }
 
 .navbar-sidebar .navbar-list li a i{
@@ -395,7 +399,7 @@ input.au-input.au-input-xl{
     right:0
 }
 .header-mobile .header-mobile-bar{
-    padding:15px 0;    background: #fff;
+    padding:15px 0;    background: rgb(255, 46, 161);
 }
 .header-mobile .header-mobile-inner{
     display:-webkit-box;
@@ -543,7 +547,7 @@ input.au-input.au-input-xl{
 .price{
     margin:15px 0 0;
     font-weight:800;
-    color:#0da8e4
+    color:rgb(255, 46, 161)
 }
 .product-box h1{
     font-size:18px;
@@ -684,14 +688,14 @@ select{
     margin:0
 }
 table.table.table-bordered{
-    border:1px solid #ccc;
-    background:#fff
+    border:1px solid rgb(255, 46, 161);
+    background:rgb(255, 163, 213)
 }
 .table-bordered td,.table-bordered th{
-    border:1px solid #dee2e6
+    border:1px solid rgb(255, 46, 161)
 }
 table.table.table-bordered th{
-    BACKGROUND:#0da8e4;
+    BACKGROUND:rgb(255, 46, 161);
     color:#fff;
     font-size:14px;
     padding:7px
@@ -718,7 +722,7 @@ table.table.table-bordered th{
  .price{
     margin:15px 0 0;
     font-weight:800;
-    color:#0da8e4
+    color:rgb(255, 46, 161)
 }
 .detail-section{
     margin-top:60px
@@ -738,8 +742,8 @@ table.table.table-bordered th{
 
  .btn-info{
     color:#fff;
-    background-color:#0da8e4!important;
-    border-color:#0da8e4!important
+    background-color:rgb(255, 46, 161)!important;
+    border-color:rgb(255, 46, 161)!important
 }
 a.primary-btn{
     background:#05143f;
@@ -752,7 +756,7 @@ a.primary-btn{
     margin-top:5px
 }
 a.primary-btn:hover{
-    background:#0da8e4;
+    background:rgb(255, 46, 161);
     color:#fff
 }
 
@@ -992,11 +996,11 @@ footer ul li{
         right:10px;
         min-width:85px;
         color:#fff;
-        border:1px solid #205b8d;
+        border:1px solid rgb(255, 46, 161);
         -webkit-border-radius:3px;
         -moz-border-radius:3px;
         border-radius:0;
-        background:#205b8d
+        background:rgb(255, 46, 161)
     }
     input.au-input.au-input-xl{
         border-radius:0!important;
