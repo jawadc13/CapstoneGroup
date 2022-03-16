@@ -378,7 +378,7 @@ input.au-input.au-input-xl{
 .navbar-sidebar .navbar-list li a{
     display:block;
     transform: rotate3d(2, 0, 1, 60deg);
-    color:rgb(255, 46, 161);
+    color:#fff;
     font-size:25px;
     padding:10px 0
 }
@@ -388,7 +388,8 @@ input.au-input.au-input-xl{
 }
 
 .navbar-sidebar .navbar-list li a:hover{
-    color:#0da8e4
+    color: #fdbfbf;
+    font-weight: 900;
 }
 
 /* 
