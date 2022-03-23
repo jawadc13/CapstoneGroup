@@ -13,10 +13,10 @@ export class ProductService {
 
 
 
-  private baseUrl = 'http://localhost:8181/products';
+  private baseUrl = 'http://localhost:8181/api/products';
 
 
-  private categoryUrl = 'http://localhost:8181/product-category';
+  private categoryUrl = 'http://localhost:8181/api/product-category';
   constructor(private httpClient: HttpClient) { }
 
   getProduct(theProductId: number): Observable<Product> {
