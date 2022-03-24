@@ -10,7 +10,7 @@ import { Purchase } from '../common/purchase';
 })
 export class CheckoutService {
 
-  private purchaseUrl = 'http://localhost:8181/api/checkout/purchase';
+  private purchaseUrl = 'https://localhost:8181/api/checkout/purchase';
 
   private paymentIntentUrl = environment.luv2shopApiUrl + '/checkout/payment-intent';
 
