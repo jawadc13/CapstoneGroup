@@ -16,8 +16,37 @@
 	<description>Springboot Ecommerce Project</description>
 	<properties>
 		<java.version>18</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<junit.platform.version>1.8.1</junit.platform.version>
+		<junit.jupiter.version>5.8.1</junit.jupiter.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${junit.jupiter.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-suite</artifactId>
+			<version>${junit.platform.version}</version><!--$NO-MVN-MAN-VER$ -->
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -52,12 +81,12 @@
 			<artifactId>okta-spring-boot-starter</artifactId>
 			<version>2.0.1</version>
 		</dependency>
-		 <dependency>
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version><!-- $NO-MVN-MAN-VER$ -->
 			<scope>provided</scope>
-		</dependency> 
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
