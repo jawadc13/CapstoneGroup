@@ -36,30 +36,30 @@ public class OrderRepositoryTest {
 		MockitoAnnotations.openMocks(this);
 
 	}
-
-	@Test
-	public void getAllOrderTest() {
-
-		ArrayList<Order> order = new ArrayList<Order>();
-
-		Order e = Mockito.mock(Order.class);
-
-		e.setId((long) 1);
-		e.setEmail("johnDoe@gmail.com");
-		e.setFirstName("john");
-		e.setLastName("doe");
-
-		order.add(e);
-
-		repo.saveAll(order);
-
-		verify(repo, times(1)).saveAll(order);
-
-		when(repo.findAll()).thenReturn(order);
-
-		Assertions.assertFalse(repo.findAll().isEmpty());
-
-	}
+//
+//	@Test
+//	public void getAllOrderTest() {
+//
+//		ArrayList<Order> order = new ArrayList<Order>();
+//
+//		Order e = Mockito.mock(Order.class);
+//
+//		e.setId((long) 1);
+//		e.setEmail("johnDoe@gmail.com");
+//		e.setFirstName("john");
+//		e.setLastName("doe");
+//
+//		order.add(e);
+//
+//		repo.saveAll(order);
+//
+//		verify(repo, times(1)).saveAll(order);
+//
+//		when(repo.findAll()).thenReturn(order);
+//
+//		Assertions.assertFalse(repo.findAll().isEmpty());
+//
+//	}
 
 
 }
