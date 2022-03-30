@@ -20,11 +20,8 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<junit.platform.version>1.8.1</junit.platform.version>
 		<junit.jupiter.version>5.8.1</junit.jupiter.version>
-		<sonar.organization>hcldev</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>jacoco-maven-plugin</artifactId>
