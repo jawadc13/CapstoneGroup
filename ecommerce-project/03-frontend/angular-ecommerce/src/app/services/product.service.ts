@@ -14,10 +14,17 @@ export class ProductService {
 
 
 
+<<<<<<< HEAD
   private baseUrl = environment.ecommerceUrl + '/products';
 
 
   private categoryUrl = environment.ecommerceUrl + '/product-category';
+=======
+  private baseUrl = 'https://localhost:8181/api/products';
+
+
+  private categoryUrl = 'https://localhost:8181/api/product-category';
+>>>>>>> 09b18d5ff11788c5a92d7c0bfe632c17cf08dcd7
   constructor(private httpClient: HttpClient) { }
 
   getProduct(theProductId: number): Observable<Product> {

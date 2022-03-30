@@ -144,7 +144,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
     top:0;
     right:0;
     left:200px;
-    height:75px;
+    height:100px;
     z-index:3
 }
 
@@ -217,6 +217,18 @@ section{
 
 .au-input-xl{
     min-width:500px
+<<<<<<< HEAD
+=======
+}
+
+.login-status-header{
+    height: 3em;
+}
+
+.login-status-user-info{
+    width: 10em;
+    height: 1em;
+>>>>>>> 09b18d5ff11788c5a92d7c0bfe632c17cf08dcd7
 }
 
 input.au-input.au-input-xl{
@@ -334,7 +346,7 @@ input.au-input.au-input-xl{
 
 .menu-sidebar .logo{
     background:rgb(138, 17, 17);
-    height:75px;
+    height:100px;
     padding:0 35px;
     display:-webkit-box;
     display:-webkit-flex;

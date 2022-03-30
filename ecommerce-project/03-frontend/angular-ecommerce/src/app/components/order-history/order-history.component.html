@@ -12,7 +12,10 @@
                         <th width="10%">Date</th>
                     </tr>
 
+<<<<<<< HEAD
                     
+=======
+>>>>>>> 09b18d5ff11788c5a92d7c0bfe632c17cf08dcd7
                     <tr *ngFor="let tempOrderHistory of orderHistoryList">
                         <td>
                             {{ tempOrderHistory.orderTrackingNumber }}
@@ -26,6 +29,7 @@
                         <td>
                             {{ tempOrderHistory.dateCreated | date: 'medium' }}
                         </td>
+<<<<<<< HEAD
 
                     </tr>
                     
@@ -40,4 +44,17 @@
 
     </div>
 
+=======
+                    </tr>
+                </table>
+            </div>
+
+            <!-- if order history is empty then display a message -->
+            <div *ngIf="orderHistoryList.length == 0" class="alert alert-warning col-md-12" role="alert">
+                No orders found.
+            </div>
+
+        </div>
+    </div>
+>>>>>>> 09b18d5ff11788c5a92d7c0bfe632c17cf08dcd7
 </div>
