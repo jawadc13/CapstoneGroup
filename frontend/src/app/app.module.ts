@@ -28,14 +28,10 @@ import {
 import myAppConfig from './config/my-app-config';
 import { MembersPageComponent } from './components/members-page/members-page.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
-<<<<<<< HEAD
 
 import { OktaAuth } from '@okta/okta-auth-js';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 
-=======
-import { AuthInterceptorService } from './services/auth-interceptor-service.service';
->>>>>>> 09b18d5ff11788c5a92d7c0bfe632c17cf08dcd7
 const oktaConfig = Object.assign({
   onAuthRequired: (oktaAuth, injector) => {
     const router = injector.get(Router);
@@ -87,11 +83,7 @@ const routes: Routes = [
     OktaAuthModule
   ],
   providers: [ProductService, { provide: OKTA_CONFIG, useValue: {oktaAuth} },
-<<<<<<< HEAD
               {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
-=======
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
->>>>>>> 09b18d5ff11788c5a92d7c0bfe632c17cf08dcd7
   bootstrap: [AppComponent]
 })
 export class AppModule { }

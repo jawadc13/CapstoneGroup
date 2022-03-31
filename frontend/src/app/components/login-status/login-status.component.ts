@@ -41,17 +41,8 @@ export class LoginStatusComponent implements OnInit {
           //retrieve the user's email from authentication response
           const theEmail = res.email;
 
-<<<<<<< HEAD
           //now store the email in browser storage
           this.storage.setItem('userEmail', JSON.stringify(theEmail));
-=======
-           // retrieve the user's email from authentication response
-           const theEmail = res.email;
-
-           // email in browser storage
-           this.storage.setItem('userEmail', JSON.stringify(theEmail));
-
->>>>>>> 09b18d5ff11788c5a92d7c0bfe632c17cf08dcd7
         }
       );
     }
