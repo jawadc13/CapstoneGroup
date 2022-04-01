@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ecommerceUrl: "https://localhost:8181",
+  ecommerceUrl: "https://ecommerce-back.azurewebsites.net",
   stripePublishableKey: "pk_test_51KfpTVAVStLNAELTHj4bFvix6sySvR19arB8g1xadof7eeWk2RqA9NOalOo4SNJtb5P1zCz5CbYVFDLPxF5X34S000hoxBuUmL"
 };
 
