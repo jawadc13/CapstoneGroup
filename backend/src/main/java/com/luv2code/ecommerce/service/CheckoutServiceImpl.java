@@ -23,7 +23,9 @@ import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentIntent;
 
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
+
+
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
 

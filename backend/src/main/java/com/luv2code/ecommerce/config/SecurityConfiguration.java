@@ -12,8 +12,7 @@ import com.okta.spring.boot.oauth.Okta;
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
-	@Autowired
-    private MyBasicAuthenticationEntryPoint authenticationEntryPoint;
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -28,9 +27,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         // add CORS filters
         http.cors();
-        
-        http.exceptionHandling()
-        .authenticationEntryPoint(authenticationEntryPoint);
+
+
         
      
 
