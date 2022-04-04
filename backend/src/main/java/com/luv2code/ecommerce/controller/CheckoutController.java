@@ -1,6 +1,6 @@
 package com.luv2code.ecommerce.controller;
 
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,11 +17,14 @@ import com.luv2code.ecommerce.service.CheckoutService;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentIntent;
 
+import org.slf4j.*;//new line
+
 @RestController
 @RequestMapping("api/checkout")
 public class CheckoutController {
 	
-	private Logger logger = Logger.getLogger(getClass().getName());
+	//private Logger logger = Logger.getLogger(getClass().getName());
+	Logger logger = LoggerFactory.getLogger(CheckoutController.class); //new line
 
 	private CheckoutService checkoutService;
 	
@@ -32,7 +35,7 @@ public class CheckoutController {
 	@PostMapping("/purchase")
 	public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
 		PurchaseResponse purchaseResponse = checkoutService.placeOrder(purchase);
-		
+		logger.trace("placeOrder method accessed"); //new line
 		return purchaseResponse;
 	}
 	
