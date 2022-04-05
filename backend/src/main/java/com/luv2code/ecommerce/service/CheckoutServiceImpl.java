@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -40,6 +41,14 @@ public class CheckoutServiceImpl implements CheckoutService {
 		// initialize Stripe API with secret key
 		Stripe.apiKey = secretKey;
 	}
+	
+	
+	@FunctionalInterface
+	  
+	interface orderItemInterface {
+	    Long getid(Long x);
+	}
+	  
 
 	@Override
 	@Transactional
@@ -76,15 +85,20 @@ public class CheckoutServiceImpl implements CheckoutService {
 
 		// save to the database
 		customerRepository.save(customer);
+		
+		
+		// stream filter for id order items
+		
+		List<OrderItem> o = order.getOrderItems().stream().filter(d -> d.getId().equals(d.getId()))                        
+	            .collect(Collectors.toList());
+
 
 		// subtract items purchased from product inventory
 		for (int i = 0; i < order.getOrderItems().size(); i++) {
 
-			Long id = order.getOrderItems().stream().toList().get(i).getId();
+			int quantity = o.get(i).getQuantity();
 
-			int quantity = order.getOrderItems().stream().toList().get(i).getQuantity();
-
-			Product purchasedItem = productRepository.getById(id);
+			Product purchasedItem = productRepository.getById(o.get(i).getId());
 			
 			purchasedItem.setUnitInStock(purchasedItem.getUnitInStock() - quantity);
 			
@@ -119,5 +133,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 
 		return PaymentIntent.create(params);
 	}
+	
+	  
 
 }
