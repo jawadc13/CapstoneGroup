@@ -41,14 +41,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 		// initialize Stripe API with secret key
 		Stripe.apiKey = secretKey;
 	}
-	
-	
-	@FunctionalInterface
-	  
-	interface orderItemInterface {
-	    Long getid(Long x);
-	}
-	  
+
 
 	@Override
 	@Transactional
