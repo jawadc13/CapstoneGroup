@@ -6,16 +6,38 @@
                 <div *ngFor="let tempProduct of products" class="col-md-3">
 
                     <div class="product-box">
-                        <a routerLink="/products/{{ tempProduct.id }}">
-                            <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
-                        </a>
+                        <div *ngIf="tempProduct.unitInStock  != 0">
+                            <a routerLink="/products/{{ tempProduct.id }}">
+                                <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
+                            </a>
+                        </div>
+                        <div *ngIf="tempProduct.unitInStock  == 0">
+                            <a routerLink="#">
+                                <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
+                            </a>
+                        </div>
+                       
 
-                        <a routerLink="/products/{{ tempProduct.id }}">
-                        <h1>{{tempProduct.name}}</h1>
-                    </a>
+                        <div *ngIf="tempProduct.unitInStock  != 0">
+                            <a routerLink="/products/{{ tempProduct.id }}">
+                                <h1>{{tempProduct.name}}</h1>
+                            </a>
+                        </div>
+                        <div *ngIf="tempProduct.unitInStock  == 0">
+                            <a routerLink="#">
+                                <h1>{{tempProduct.name}}</h1>
+                            </a>
+                        </div>
+
+                    
                         <div class="price">{{tempProduct.unitPrice | currency:'USD'}}</div>
-                        <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
-                    </div>
+                        <div *ngIf="tempProduct.unitInStock  == 0" class="alert alert-warning col-md-12" role="alert">
+                            <button class="btn btn-primary btn-sm">Sold out</button>
+                        </div>
+                        <div *ngIf="tempProduct.unitInStock  != 0">
+                            <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
+                        </div>
+                        </div>
                 </div>
 
                 <!-- if products empty then display a message-->
