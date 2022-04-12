@@ -3,7 +3,7 @@ spring:
         name: backend
 
 server:
-    port: 9899
+    port: 9898
 
 logging:
     file: C:\Users\taco7\Desktop\ELK_logs\elk-stack.log
