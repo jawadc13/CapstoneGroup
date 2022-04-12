@@ -6,7 +6,7 @@ name: Build and deploy JAR app to Azure Web App - ecommerce-back
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'backend/**'
   workflow_dispatch:
