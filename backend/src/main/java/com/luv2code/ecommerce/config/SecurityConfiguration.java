@@ -19,18 +19,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         // protect endpoint /api/orders
         http.authorizeRequests()
-                .antMatchers("/api/orders/**")
+                .antMatchers("/api/orders/**","/swagger-ui.html", "/swagger-ui/index.html")
                 .authenticated()
                 .and()
                 .oauth2ResourceServer()
                 .jwt();
 
+
+        //  http.authorizeRequests().antMatchers("/swagger-ui.html", "/swagger-ui/index.html");
+
         // add CORS filters
         http.cors();
 
-
-        http.authorizeRequests().antMatchers("/swagger-ui.html", "/swagger-ui/index.html");
-     
 
         // force a non-empty response body for 401's to make the response more friendly
         Okta.configureResourceServer401ResponseBody(http);
