@@ -17,7 +17,7 @@ public class MultiSecurityConfiguration {
 
             // protect endpoint /api/orders
             http.authorizeRequests()
-                    .antMatchers("/api/orders/**")
+                    .antMatchers("/orders/**")
                     .authenticated()
                     .and()
                     .oauth2ResourceServer()
