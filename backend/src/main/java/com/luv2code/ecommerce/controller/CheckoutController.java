@@ -17,7 +17,7 @@ import com.stripe.model.PaymentIntent;
 
 @Log4j2
 @RestController
-@RequestMapping("/checkout")
+@RequestMapping("api/checkout")
 public class CheckoutController {
 
 	private CheckoutService checkoutService;
