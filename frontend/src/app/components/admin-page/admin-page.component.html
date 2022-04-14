@@ -99,7 +99,7 @@
                             <input formControlName="imageUrl" type="text">
                             <div *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched)" class="alert alert-danger mt-1">
                                 
-                                <div *ngIf="description.errors.required">
+                                <div *ngIf="imageUrl.errors.required">
                                     Image url is required
                                 </div>
 
