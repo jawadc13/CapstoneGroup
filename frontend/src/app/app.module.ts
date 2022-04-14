@@ -74,7 +74,8 @@ const routes: Routes = [
     LoginComponent,
     LoginStatusComponent,
     MembersPageComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    AdminPageComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
