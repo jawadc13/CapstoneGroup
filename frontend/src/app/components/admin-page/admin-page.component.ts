@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/common/product';
 import { ProductService } from 'src/app/services/product.service';
@@ -10,9 +11,13 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AdminPageComponent implements OnInit {
 
+  createProductFormGroup: FormGroup;
+  updateProductFormGroup: FormGroup;
+  deleteProductFormGroup: FormGroup;
+
   products: Product[] = [];
 
-  constructor(private productService: ProductService,
+  constructor(private formBuilder: FormBuilder,private productService: ProductService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
