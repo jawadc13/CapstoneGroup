@@ -65,7 +65,7 @@ export class AdminPageComponent implements OnInit {
   }
 
 
-  onSubmit() {
+  onSubmitCreate() {
     console.log("Handling the submit button");
 
     if (this.productFormGroup.invalid) {
@@ -85,6 +85,82 @@ export class AdminPageComponent implements OnInit {
    
                 //call REST API via the AdminService
                 this.adminService.createProduct(product).subscribe({
+                  next: response => {
+                    alert(`Product was created`);
+
+                    this.isDisabled = false;
+                  },
+                  error: err => {
+                    alert(`There was an error: ${err.message}`);
+                    this.isDisabled = false;
+                  }
+                })}else{
+      this.productFormGroup.markAllAsTouched();
+      return;
+    }
+
+  }
+
+
+
+  onSubmitUpdate() {
+    console.log("Handling the submit button");
+
+    if (this.productFormGroup.invalid) {
+      this.productFormGroup.markAllAsTouched();
+      return;
+    }
+
+
+    // set product object with form values
+    let product = new Product();
+    product = this.productFormGroup.controls['product'].value;
+
+    if(!this.productFormGroup.invalid && this.displayError.textContext === "") {
+      
+      this.isDisabled = true;
+
+   
+                //call REST API via the AdminService
+                this.adminService.updateProduct(product).subscribe({
+                  next: response => {
+                    alert(`Product was created`);
+
+                    this.isDisabled = false;
+                  },
+                  error: err => {
+                    alert(`There was an error: ${err.message}`);
+                    this.isDisabled = false;
+                  }
+                })}else{
+      this.productFormGroup.markAllAsTouched();
+      return;
+    }
+
+  }
+
+
+
+  onSubmitDelete() {
+    console.log("Handling the submit button");
+
+    if (this.productFormGroup.invalid) {
+      this.productFormGroup.markAllAsTouched();
+      return;
+    }
+
+
+    // set product object with form values
+    let product = new Product();
+    product = this.productFormGroup.controls['product'].value;
+
+    if(!this.productFormGroup.invalid && this.displayError.textContext === "") {
+      
+      this.isDisabled = true;
+
+   
+                //call REST API via the AdminService
+                this.adminService.deleteProduct(product).subscribe({
                   next: response => {
                     alert(`Product was created`);
 
