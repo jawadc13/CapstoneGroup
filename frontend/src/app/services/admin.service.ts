@@ -10,11 +10,11 @@ import { environment } from 'src/environments/environment';
 export class AdminService {
 
 
-  private createProductUrl = environment.ecommerceUrl + 'product/service/create';
+  private createProductUrl = environment.ecommerceUrl + '/product/service/create';
 
-  private updateProductUrl = environment.ecommerceUrl + 'product/service/update';
+  private updateProductUrl = environment.ecommerceUrl + '/product/service/update';
 
-  private deleteProductUrl = environment.ecommerceUrl + 'product/service/delete';
+  private deleteProductUrl = environment.ecommerceUrl + '/product/service/delete';
 
   constructor(private httpClient: HttpClient) { }
 
