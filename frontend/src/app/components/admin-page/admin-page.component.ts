@@ -18,10 +18,40 @@ export class AdminPageComponent implements OnInit {
 
   products: Product[] = [];
 
+  storage: Storage = sessionStorage;
+
   constructor(private formBuilder: FormBuilder,private productService: ProductService,
     private adminService: AdminService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+
+  onSubmitCreate() {
+    console.log("Handling the submit button");
+
+    if (this.createProductFormGroup.invalid) {
+      this.createProductFormGroup.markAllAsTouched();
+      return;
+    }
+  }
+
+  onSubmitUpdate() {
+    console.log("Handling the submit button");
+
+    if (this.updateProductFormGroup.invalid) {
+      this.updateProductFormGroup.markAllAsTouched();
+      return;
+    }
+  }
+
+  onSubmitDelete() {
+    console.log("Handling the submit button");
+
+    if (this.deleteProductFormGroup.invalid) {
+      this.deleteProductFormGroup.markAllAsTouched();
+      return;
+    }
   }
 
 
