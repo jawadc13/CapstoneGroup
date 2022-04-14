@@ -11,6 +11,7 @@ export class LoginStatusComponent implements OnInit {
 
   isAuthenticated: boolean = false;
   userFullName: string;
+  isAdmin: boolean = false;
 
   storage: Storage = sessionStorage;
 
@@ -37,6 +38,7 @@ export class LoginStatusComponent implements OnInit {
         (res) => {
 
           this.userFullName = res.name;
+          this.isAdmin = res['groups'];
           
           //retrieve the user's email from authentication response
           const theEmail = res.email;
