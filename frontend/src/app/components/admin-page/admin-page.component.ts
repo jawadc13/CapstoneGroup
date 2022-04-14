@@ -15,8 +15,6 @@ export class AdminPageComponent implements OnInit {
   productFormGroup: FormGroup;
   product: Product;
 
-  storage: Storage = sessionStorage;
-
   displayError: any = "";
 
   isDisabled: boolean = false;
@@ -63,6 +61,16 @@ export class AdminPageComponent implements OnInit {
       }),
     });
   }
+
+  get id() { return this.productFormGroup.get('product.id'); }
+  get category() { return this.productFormGroup.get('product.category'); }
+  get sku() { return this.productFormGroup.get('product.sku'); }
+  get name() { return this.productFormGroup.get('product.name'); }
+  get description() { return this.productFormGroup.get('product.description'); }
+  get unitPrice() { return this.productFormGroup.get('product.unitPrice'); }
+  get imageUrl() { return this.productFormGroup.get('product.imageUrl'); }
+  get active() { return this.productFormGroup.get('product.active'); }
+  get unitInStock() { return this.productFormGroup.get('product.unitInStock'); }
 
 
   onSubmitCreate() {
