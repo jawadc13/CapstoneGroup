@@ -13,9 +13,13 @@ import { ProductService } from 'src/app/services/product.service';
 export class AdminPageComponent implements OnInit {
 
   productFormGroup: FormGroup;
-  products: Product[] = [];
+  product: Product;
 
   storage: Storage = sessionStorage;
+
+  displayError: any = "";
+
+  isDisabled: boolean = false;
 
   constructor(private formBuilder: FormBuilder,private productService: ProductService,
     private adminService: AdminService,private route: ActivatedRoute) { }
@@ -23,7 +27,7 @@ export class AdminPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.productFormGroup= this.formBuilder.group({
-      customer: this.formBuilder.group({
+      product: this.formBuilder.group({
         id: new FormControl('', [
           Validators.required,
         ]),
@@ -68,6 +72,33 @@ export class AdminPageComponent implements OnInit {
       this.productFormGroup.markAllAsTouched();
       return;
     }
+
+
+    // set product object with form values
+    let product = new Product();
+    product = this.productFormGroup.controls['product'].value;
+
+    if(!this.productFormGroup.invalid && this.displayError.textContext === "") {
+      
+      this.isDisabled = true;
+
+   
+                //call REST API via the AdminService
+                this.adminService.createProduct(product).subscribe({
+                  next: response => {
+                    alert(`Product was created`);
+
+                    this.isDisabled = false;
+                  },
+                  error: err => {
+                    alert(`There was an error: ${err.message}`);
+                    this.isDisabled = false;
+                  }
+                })}else{
+      this.productFormGroup.markAllAsTouched();
+      return;
+    }
+
   }
 
 }
