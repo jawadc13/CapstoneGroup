@@ -8,6 +8,6 @@ public interface ProductService {
 	
 	Product createProduct(@RequestBody Product product);
 	Product updateProduct(@RequestBody Product product);
-	Product deleteProduct(@RequestBody Product product);
+	void deleteProduct(@RequestBody Product product);
 
 }

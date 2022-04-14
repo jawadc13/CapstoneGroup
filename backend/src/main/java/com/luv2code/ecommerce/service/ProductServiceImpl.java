@@ -1,10 +1,12 @@
 package com.luv2code.ecommerce.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.luv2code.ecommerce.dao.ProductRepository;
 import com.luv2code.ecommerce.entity.Product;
 
+@Service
 public class ProductServiceImpl implements ProductService{
 	
 	private ProductRepository productRepository;
@@ -18,19 +20,26 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public Product createProduct(Product product) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		productRepository.save(product);
+		
+		return product;
 	}
 
 	@Override
 	public Product updateProduct(Product product) {
 		// TODO Auto-generated method stub
-		return null;
+
+		productRepository.save(product);
+		
+		return product;
 	}
 
 	@Override
-	public Product deleteProduct(Product product) {
+	public void deleteProduct(Product product) {
 		// TODO Auto-generated method stub
-		return null;
+		productRepository.delete(product);
+	
 	}
 
 }

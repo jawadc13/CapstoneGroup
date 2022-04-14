@@ -23,23 +23,22 @@ public class ProductController {
 	
 	@PostMapping("/create")
 	public Product createProduct(@RequestBody Product product) {
-	
+		productService.createProduct(product);
 		log.info("create product");
-		return null;
+		return product;
 	}
 	
 	@PostMapping("/update")
 	public Product updateProduct(@RequestBody Product product) {
-
+		productService.updateProduct(product);
 		log.info("update product");
-		return null;
+		return product;
 	}
 	
 	@PostMapping("/delete")
-	public Product deleteProduct(@RequestBody Long id) {
-		
+	public void deleteProduct(@RequestBody Product product) {
+		productService.deleteProduct(product);
 		log.info("delete product");
-		return null;
 	}
 
 }

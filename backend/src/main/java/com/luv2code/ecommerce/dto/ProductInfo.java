@@ -28,8 +28,6 @@ public class ProductInfo {
 	
 	private int unitInStock;
 	
-	private Date dateCreated;
-	
 	private Date lastUpdated;
 
 }
