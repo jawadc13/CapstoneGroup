@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/common/product';
 import { AdminService } from 'src/app/services/admin.service';
@@ -12,10 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AdminPageComponent implements OnInit {
 
-  createProductFormGroup: FormGroup;
-  updateProductFormGroup: FormGroup;
-  deleteProductFormGroup: FormGroup;
-
+  productFormGroup: FormGroup;
   products: Product[] = [];
 
   storage: Storage = sessionStorage;
@@ -24,35 +21,53 @@ export class AdminPageComponent implements OnInit {
     private adminService: AdminService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.productFormGroup= this.formBuilder.group({
+      customer: this.formBuilder.group({
+        id: new FormControl('', [
+          Validators.required,
+        ]),
+        category: new FormControl('', [
+          Validators.required,
+        ]),
+        sku: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+        ]),
+        name: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+        ]),
+        description: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+        ]),
+        unitPrice: new FormControl('', [
+          Validators.required,
+        ]),
+        imageUrl: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+        ]),
+        active: new FormControl('', [
+          Validators.required,
+        ]),
+        unitInStock: new FormControl('', [
+          Validators.required,
+        ]),
+      
+      }),
+    });
   }
 
 
-  onSubmitCreate() {
+  onSubmit() {
     console.log("Handling the submit button");
 
-    if (this.createProductFormGroup.invalid) {
-      this.createProductFormGroup.markAllAsTouched();
+    if (this.productFormGroup.invalid) {
+      this.productFormGroup.markAllAsTouched();
       return;
     }
   }
-
-  onSubmitUpdate() {
-    console.log("Handling the submit button");
-
-    if (this.updateProductFormGroup.invalid) {
-      this.updateProductFormGroup.markAllAsTouched();
-      return;
-    }
-  }
-
-  onSubmitDelete() {
-    console.log("Handling the submit button");
-
-    if (this.deleteProductFormGroup.invalid) {
-      this.deleteProductFormGroup.markAllAsTouched();
-      return;
-    }
-  }
-
 
 }
