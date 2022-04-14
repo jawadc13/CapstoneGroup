@@ -10,30 +10,30 @@ import { environment } from 'src/environments/environment';
 export class AdminService {
 
 
-  private createProductUrl = environment.ecommerceUrl + '';
+  private createProductUrl = environment.ecommerceUrl + 'product/service/create';
 
-  private updateProductUrl = environment.ecommerceUrl + '';
+  private updateProductUrl = environment.ecommerceUrl + 'product/service/update';
 
-  private deleteProductUrl = environment.ecommerceUrl + '';
+  private deleteProductUrl = environment.ecommerceUrl + 'product/service/delete';
 
   constructor(private httpClient: HttpClient) { }
 
 
   createProduct(product: Product): Observable<Product>{
-
-    return null;
+  
+    return this.httpClient.post<Product>(this.createProductUrl,product);
     
   }
 
-  addProduct(product: Product): Observable<Product>{
+  updateProduct(product: Product): Observable<Product>{
 
-    return null;
+    return this.httpClient.post<Product>(this.updateProductUrl,product);
     
   }
 
   deleteProduct(product: Product): Observable<Product>{
 
-    return null;
+    return this.httpClient.post<Product>(this.deleteProductUrl,product);
     
   }
 
