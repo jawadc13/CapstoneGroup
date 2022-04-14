@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/common/product';
+import { AdminService } from 'src/app/services/admin.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -18,9 +19,10 @@ export class AdminPageComponent implements OnInit {
   products: Product[] = [];
 
   constructor(private formBuilder: FormBuilder,private productService: ProductService,
-    private route: ActivatedRoute) { }
+    private adminService: AdminService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
+
 
 }
