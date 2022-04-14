@@ -38,12 +38,12 @@ export class LoginStatusComponent implements OnInit {
         (res) => {
 
           this.userFullName = res.name;
-          this.isAdmin = res['groups'];
+          
           
           //retrieve the user's email from authentication response
           const theEmail = res.email;
           const theGroups = res['groups'];
-
+          this.isAdmin = theGroups.includes('Admin');
           //now store the email in browser storage
           this.storage.setItem('userEmail', JSON.stringify(theEmail));
           this.storage.setItem('isAdmin', theGroups.includes('Admin'));
