@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../common/product';
 import { map } from 'rxjs/operators';
-import { ProductCategory } from '../common/product-category';
 import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
@@ -19,12 +18,24 @@ export class AdminService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // functions to be added
+
+  createProduct(product: Product): Observable<Product>{
+
+    return null;
+    
+  }
+
+  addProduct(product: Product): Observable<Product>{
+
+    return null;
+    
+  }
+
+  deleteProduct(product: Product): Observable<Product>{
+
+    return null;
+    
+  }
 
 
-}
-interface GetResponseProducts {
-  _embedded: {
-    products: Product[];
-  },
 }
