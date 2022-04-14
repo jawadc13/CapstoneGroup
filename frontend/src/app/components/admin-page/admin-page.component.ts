@@ -124,7 +124,7 @@ export class AdminPageComponent implements OnInit {
                 //call REST API via the AdminService
                 this.adminService.updateProduct(product).subscribe({
                   next: response => {
-                    alert(`Product was created`);
+                    alert(`Product was updated`);
 
                     this.isDisabled = false;
                   },
@@ -162,7 +162,7 @@ export class AdminPageComponent implements OnInit {
                 //call REST API via the AdminService
                 this.adminService.deleteProduct(product).subscribe({
                   next: response => {
-                    alert(`Product was created`);
+                    alert(`Product was deleted`);
 
                     this.isDisabled = false;
                   },
